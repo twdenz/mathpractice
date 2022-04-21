@@ -24,7 +24,7 @@ def calc(a,ops,b):
     else: 
         raise ValueError("Unsupported math operation")
 
-total = 5
+total = 30
 correct = 0
 start_time = time.time()
 for _ in range(total):
@@ -49,15 +49,12 @@ for _ in range(total):
         a = random.randint(1,99)
         b = random.randint(1,9)
     # as a formatted text 
-    result = askNum(f"{a} {ops} {b} =\n")
+    result = askNum(f"\n{a} {ops} {b} =\n")
 
     # calculate correct result
     corr = calc(a,ops,b)
     if  result == corr:
         correct += 1
-        print("Correct")
-    else:
-        print(f"Wrong. Correct solution is: {a} {ops} {b} = {corr}")
 
 end_time = time.time()
 print(f"You have {(correct/total)*100}% correct in {round((end_time-start_time),2)} seconds.")
